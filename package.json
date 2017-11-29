@@ -23,7 +23,14 @@
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "web3": "1.0.0-beta.26",
+    "web3-provider-engine": "13.3.3",
+    "@aeternity/id-manager-provider": "0.0.8",
+    "jsrsasign": "8.0.4",
+    "ethereumjs-util": "5.1.2",
+    "@angular/material": "5.0.0-rc.2",
+    "@angular/cdk": "5.0.0-rc.2"
   },
   "devDependencies": {
     "@angular/cli": "1.5.0",
@@ -33,6 +40,7 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.2.0",
+    "gh-pages": "^1.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -44,6 +52,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "2.6.2"
   }
 }
