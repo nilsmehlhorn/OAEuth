@@ -1,0 +1,42 @@
+@import "../../../style/variables";
+
+.ae-header {
+  background-image: linear-gradient(to bottom, $anthracite, $aubergine);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  header {
+    height: 65px;
+    max-width: $container-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @media (max-width: $container-width) {
+      padding: 0 14px;
+    }
+    > img {
+      height: 24px;
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 15px;
+    }
+    > a {
+      line-height: 24px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      color: $white;
+    }
+    .ae-header-button {
+      margin: 0 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  @media (min-width: $screen-phone + 1) {
+    header {
+      justify-content: space-between;
+    }
+  }
+}
