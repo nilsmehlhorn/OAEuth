@@ -1,7 +1,32 @@
-<mat-card class="grant-card" *ngFor="let g of grants">
-  <mat-card-header>
-    <img mat-card-avatar [src]="g.iconSrc">
-    <mat-card-title>{{g.clientId}}</mat-card-title>
-    <mat-card-subtitle>Granted on {{g.issueDate | date:'yyyy-MM-dd'}}</mat-card-subtitle>
-  </mat-card-header>
-</mat-card>
+<div class="wrapper">
+  <div class="box">
+    <div class="card" *ngFor="let g of grants">
+      <header>
+        <i class="material-icons icon">vpn_key</i>
+        <section>
+          <h1>{{g.target}}</h1>
+          <h2>Granted on {{g.issuedAt | date:'yyyy-MM-dd'}}</h2>
+        </section>
+      </header>
+    </div>
+    <div class="card dummy-creator">
+      <header>
+        <i class="material-icons icon">add</i>
+        <section>
+          <h1>Create dummy grant</h1>
+        </section>
+      </header>
+      <div class="ae-input">
+        <label>Client ID</label>
+        <input [(ngModel)]="dummyClient" type="text"/>
+      </div>
+      <div class="ae-input">
+        <label>Redirect URI</label>
+        <input [(ngModel)]="dummyRedirect" type="text"/>
+      </div>
+      <div class="card-actions">
+        <button class="boring" (click)="create()">Go authorize</button>
+      </div>
+    </div>
+  </div>
+</div>

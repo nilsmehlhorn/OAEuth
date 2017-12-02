@@ -26,11 +26,10 @@
     "zone.js": "^0.8.14",
     "web3": "1.0.0-beta.26",
     "web3-provider-engine": "13.3.3",
-    "@aeternity/id-manager-provider": "0.0.8",
+    "@aeternity/id-manager-provider": "0.0.9",
     "jsrsasign": "8.0.4",
     "ethereumjs-util": "5.1.2",
-    "@angular/material": "5.0.0-rc.2",
-    "@angular/cdk": "5.0.0-rc.2"
+    "normalize.css": "7.0.0"
   },
   "devDependencies": {
     "@angular/cli": "1.5.0",

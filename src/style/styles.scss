@@ -1,11 +1,122 @@
-/* You can add global styles to this file, and also import other style files */
-
-@import "theme";
+@import "ae";
 
 body {
+  background-color: $white;
   padding: 0;
   margin: 0;
 }
 
+div.card {
+  background-color: $white;
+  color: $dark;
+  display: block;
+  position: relative;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 24px 16px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    > .icon {
+      margin: 0 25px 15px 10px;
+      align-self: center;
+      display: block;
+      color: $maegenta;
+    }
+    > section {
+      display: block;
+      > h1 {
+        display: block;
+        font-size: 14px;
+      }
+      > h2 {
+        display: block;
+        font-size: 14px;
+        color: $grey;
+      }
+    }
+  }
+}
 
+div.card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &.vert {
+    justify-content: center;
+    flex-direction: column;
+    > button {
+      margin-top: 10px;
+    }
+  }
+}
 
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 30px;
+  &:active {
+    opacity: 0.5;
+  }
+  &.dramatic {
+    background-color: $maegenta;
+    color: $white;
+  }
+  &.boring {
+    background-color: $silver;
+    color: $black;
+  }
+  &.smaller {
+    background-color: rgba(0, 0, 0, 0);
+    color: $maegenta;
+    font-size: 14px;
+  }
+}
+
+div.wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+div.box {
+  width: $screen-phone;
+  > .grant-card {
+    max-width: $screen-phone - 10px;
+    margin: 5px;
+  }
+}
+
+div.ae-input {
+  > label {
+    font-size: 14px;
+    color: #989898;
+  }
+  > input {
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 26px;
+    border: solid 2px $smoke;
+    box-shadow: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    height: 44px;
+
+    ::placeholder {
+      color: $grey;
+    }
+
+    &.danger {
+      border-color: $maegenta;
+    }
+  }
+}

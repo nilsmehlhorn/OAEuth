@@ -1,21 +1,26 @@
-<mat-card class="authorize-card">
-  <mat-card-header>
-    <mat-icon mat-card-avatar>lock</mat-icon>
-    <mat-card-title>{{req.clientId}}</mat-card-title>
-    <mat-card-subtitle>Grant authorization</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
+<div class="wrapper">
+  <div class="card authorize-card">
+    <header>
+      <i class="material-icons icon">lock</i>
+      <section>
+        <h1>{{req.clientId}}</h1>
+        <h2>Grant authorization</h2>
+      </section>
+    </header>
     <p>
-      By granting authorization to the application it gains access to any public information on your account.
-      Yet, the application will not be able to perform any actions with your account.
+      By granting authorization, you'll be able to authenticate to the application.
     </p>
     <p>
-      If you confirm the grant, you'll be prompted to confirm a message signing.
-      This will persist the grant to the blockchain.
+      If you confirm the grant, you'll be prompted to confirm a transaction and a message signing.
+      This will persist the grant to the blockchain and generate your access-token.
     </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button class="confirm" (click)="addGrant(req)">CONFIRM</button>
-    <button mat-button class="cancel" (click)="cancel()">CANCEL</button>
-  </mat-card-actions>
-</mat-card>
+    <p>
+      <i>Note:</i> In subsequent versions, the application may also read some information from your account
+      (e.g. username) based on the granted authorization.
+    </p>
+    <div class="card-actions">
+      <button class="dramatic" (click)="addGrant(req)">Confirm</button>
+      <button class="boring" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

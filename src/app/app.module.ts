@@ -1,45 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule, Routes} from "@angular/router";
-import { NgModule } from '@angular/core';import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-  MatStepperModule,
-} from '@angular/material';
+import {NgModule} from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
 import 'rxjs/Rx'
 
-import { AppComponent } from './app.component';
-import { GrantsComponent } from './grants/grants.component';
+import {AppComponent} from './app.component';
+import {GrantsComponent} from './grants/grants.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { AuthorizeComponent } from './authorize/authorize.component';
+import {AuthorizeComponent} from './authorize/authorize.component';
+import {AeHeaderComponent} from "./ae/ae-header/ae-header.component";
+import {IdentityService} from "./shared/identity.service";
 
 const routeConfig:Routes =  [
   {path: "", component: GrantsComponent},
@@ -50,45 +21,16 @@ const routeConfig:Routes =  [
   declarations: [
     AppComponent,
     GrantsComponent,
-    AuthorizeComponent
+    AuthorizeComponent,
+    AeHeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routeConfig),
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatStepperModule,
+    RouterModule.forRoot(routeConfig, {useHash: true}),
+    FormsModule
   ],
-  providers: [],
+  providers: [IdentityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Location} from '@angular/common';
 import {TokenRequest} from "../shared/model/token-request";
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import {IdentityService} from "../shared/identity.service";
 
 @Component({
   selector: 'app-authorize',
@@ -11,8 +13,8 @@ export class AuthorizeComponent implements OnInit {
 
   req: TokenRequest;
 
-  constructor(private activatedRoute: ActivatedRoute,
-              private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private idService: IdentityService,
+              private location: Location) {
   }
 
   ngOnInit() {
@@ -26,18 +28,19 @@ export class AuthorizeComponent implements OnInit {
         return req;
       })
       .subscribe((req) => {
-        console.log(req)
         this.req = req
       });
   }
 
   addGrant(request: TokenRequest) {
-    const token = "";
-    window.location.href = request.redirectUri + "#" + token;
+    this.idService.generateToken(request).subscribe(token => {
+      window.location.href = request.redirectUri + "#" + token;
+    });
   }
 
   cancel() {
-    this.router.navigateByUrl("/")
+    // return
+    this.location.back();
   }
 
 }
