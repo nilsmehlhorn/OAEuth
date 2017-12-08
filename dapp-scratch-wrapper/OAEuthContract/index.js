@@ -16,11 +16,11 @@ class OAEuthContract {
     this.acc = new Subject();
 
     this.pollingInterval = null
-    this.account = '0x627306090abab3a6e1400e9345bc60c78a8bef57'
+    this.account = ''
     this.unlocked = false
     this.balanceWei = 0
     this.balance = 0
-    this.address = '0x345ca3e014aaf5dca488057592ee47305d9b3e10'
+    this.address = '0xcb07C619b37AB043df716E9140E5619F8b706Bd2' // Kovan contract address
     this.genesisBlock = 0
     this.loading = false
     this.options = {

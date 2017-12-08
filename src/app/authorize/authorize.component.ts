@@ -34,6 +34,7 @@ export class AuthorizeComponent implements OnInit {
 
   addGrant(request: TokenRequest) {
     this.idService.generateToken(request).subscribe(token => {
+      console.log("Token: " + token);
       window.location.href = request.redirectUri + "#" + token;
     });
   }
