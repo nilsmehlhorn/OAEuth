@@ -6,7 +6,7 @@ This is a decentralized app made with Angular for the æternity hackathon Nov 27
 
      +--------+                               +---------------+
      |        |                               |               |
-     |        |--(C)-- Authorization Grant -->| 	 OÆuth      |
+     |        |--(C)-- Authorization Grant -->|    OÆuth      |
      | Client |                               |     app       |
      |        |<-(D)----- Access Token -------|               |
      |        |                               +---------------+
