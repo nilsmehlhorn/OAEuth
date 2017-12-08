@@ -49,15 +49,15 @@ export class IdentityService {
 
   signMessage(message: string): Promise<string> {
     const w3 = this._contract.manager.web3;
+    const hex = w3.utils.toHex(message);
     return new Promise((resolve, reject) => {
-      resolve("----MOCK-SIGNATURE----")
-      // w3.eth.personal.sign(message, this._subject, (err, signed) => {
-      //   if(err) {
-      //     reject(err);
-      //   } else {
-      //     resolve(signed);
-      //   }
-      // })
+      w3.eth.personal.sign(hex, this._subject, (err, signed) => {
+        if(err) {
+          reject(err);
+        } else {
+          resolve(signed);
+        }
+      })
     });
   }
 
@@ -81,8 +81,8 @@ export class IdentityService {
       const encodedPayload = IdentityService.b64EncodeUnicode(JSON.stringify(payload));
       const message = encodedHeader + "." + encodedPayload;
       return Observable.fromPromise(this.signMessage(message))
-        .map(signature => {
-          const encodedSig = IdentityService.b64EncodeUnicode(JSON.stringify(signature));
+        .map((signature:string) => {
+          const encodedSig = IdentityService.b64EncodeUnicode(signature);
           return message + "." + encodedSig;
         });
     })

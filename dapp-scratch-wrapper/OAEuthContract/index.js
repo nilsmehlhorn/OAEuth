@@ -42,10 +42,7 @@ class OAEuthContract {
     return new Promise((resolve, reject) => {
 
       let web3Provider = false
-      let idManager = new IdManagerProvider({
-        rpcUrl: "http://localhost:9545",
-        skipSecurity: true
-      })
+      let idManager = new IdManagerProvider()
       that.manager = idManager;
       idManager.checkIdManager().then((idManagerPresent) => {
         // check for aedentity app
